@@ -210,7 +210,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+{ import = 'custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -255,6 +255,12 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- [[ Basic Keymaps ]]
+
+-- Terminal/window commands
+  vim.keymap.set('t', '<C-w>k', [[<C-\><C-n><C-w>k]])
+  vim.keymap.set('t', '<C-w>h', [[<C-\><C-n><C-w>h]])
+  vim.keymap.set('t', '<C-w>j', [[<C-\><C-n><C-w>j]])
+  vim.keymap.set('t', '<C-w>l', [[<C-\><C-n><C-w>l]])
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
