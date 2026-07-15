@@ -27,4 +27,11 @@ return {
   { 'nvim-tree/nvim-web-devicons' },
 
   vim.keymap.set('t', '<leader>gt', [[<C-\><C-n><Cmd>tabnext<CR>]], { desc = 'Next tab from terminal' }),
+
+  require('lspconfig').texlab.setup {
+    on_attach = function(client, bufnr)
+      client.server_capabilities.documentFormattingProvider = false
+      -- You can still use other features like completion, diagnostics, etc.
+    end,
+  },
 }
